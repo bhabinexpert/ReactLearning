@@ -6,6 +6,7 @@ const name = "Bhabin"
 const element = <h2>I am learning React..</h2>
 const Search = ()=> <input placeholder =" Sear your fav product"/> 
 const Button = ()=> <button> Submit</button>
+let count = 0
 
 const Header = ()=>{
   return (
@@ -22,6 +23,11 @@ const Header = ()=>{
   )
 }
 function App() {
+
+  const onIncrementClick = ()=>{ //handeled the on click method
+    count = count + 1
+    console.log({count})
+  }
   return (
     <>
     
@@ -34,6 +40,10 @@ function App() {
       </div>
       <Header/>
       </div>
+
+      <h2> Jsx</h2>
+      <button id = 'btn' onClick={onIncrementClick}> Increase</button>
+      
      
     </>
   )
