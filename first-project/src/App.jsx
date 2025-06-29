@@ -26,6 +26,23 @@ const Header = ()=>{
 }
 //  wee always change the list of products into objectd while rendering the webpage...
 
+const AddButton = ()=>{
+
+  const [count, setCount] = useState(0)
+  setCount(count + 1)
+  
+  return(
+    <button onClick={onIncrementClick}> Increment</button>
+  )
+}
+
+const Decreasebtn = ()=>{
+  return(
+    <button> Decrement</button>
+  )
+}
+
+
 function App() {
   
   const [value, setValue] = useState(0); // destructuring the useState method and keeping the initial value to 0.
