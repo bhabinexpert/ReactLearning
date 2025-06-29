@@ -11,10 +11,15 @@ const Button = ()=> <button> Submit</button>
 
 // functionsl component should satrs with the first letter capital...and i must return JSX otherwiae it won't return a nything to the string..
 const Header = ()=>{
+  const [search, setSearch] = useState()
+  const onSearchChange = (event) =>{
+    setSearch(event.target.value)
+
+  }
   return (
     <><div style={{backgroundColor:'blueviolet'}}>
     <h1> Musify</h1>
-    <input placeholder = 'Search for music'/>
+    <input onChange ={onSearchChange}placeholder = 'Search for music'/>
     <ul style={ { display:'flex', gap:'100px'}}>
       <li> Home</li>
       <li> About</li>
