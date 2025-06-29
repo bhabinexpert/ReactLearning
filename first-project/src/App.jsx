@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 
 // React is declarative in nature..
 
@@ -6,7 +7,7 @@ const name = "Bhabin"
 const element = <h2>I am learning React..</h2>
 const Search = ()=> <input placeholder =" Sear your fav product"/> 
 const Button = ()=> <button> Submit</button>
-let count = 0
+// let count = 0
 
 // functionsl component should satrs with the first letter capital...and i must return JSX otherwiae it won't return a nything to the string..
 const Header = ()=>{
@@ -26,11 +27,16 @@ const Header = ()=>{
 //  wee always change the list of products into objectd while rendering the webpage...
 
 function App() {
+  
+  const [value, setValue] = useState(0); // destructuring the useState method and keeping the initial value to 0.
 
+ 
   const onIncrementClick = ()=>{ //handeled the on click method
-    count = count + 1
-    console.log({count})
-    
+    setValue(value + 1); // changes the value by 1 every time the button is pressed.    
+  }
+
+  const onDecrementClick = ()=>{
+    setValue(value - 1)
   }
   return (
     <>
@@ -38,16 +44,20 @@ function App() {
     <div>
       <h1>Hello i am {name}</h1>
       {element}
-      <Button/>
+      {/* <Button/> */}
       <div>
-      <Search/>
+      {/* <Search/> */}
       </div>
-      <Header/>
+      {/* <Header/> */}
       </div>
 
       <h2> Jsx</h2>
-      <button id = 'btn' onClick={onIncrementClick}> Increase</button>
-
+      <button onClick={onIncrementClick}> Increase</button>
+      <button onClick={onDecrementClick}>Decrement</button>
+      <p> The value is {value}</p>
+      {/* the value is dispalyed in the ui */}
+    
+      
       
       
      
@@ -55,4 +65,4 @@ function App() {
   )
 }
 
-export default App
+export default App 
