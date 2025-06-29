@@ -22,11 +22,14 @@ const Header = ()=>{
     </>
   )
 }
+//  wee always change the list of products into objectd while rendering the webpage...
+
 function App() {
 
   const onIncrementClick = ()=>{ //handeled the on click method
     count = count + 1
     console.log({count})
+    
   }
   return (
     <>
@@ -43,6 +46,8 @@ function App() {
 
       <h2> Jsx</h2>
       <button id = 'btn' onClick={onIncrementClick}> Increase</button>
+
+      
       
      
     </>
