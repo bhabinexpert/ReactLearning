@@ -8,6 +8,7 @@ const Search = ()=> <input placeholder =" Sear your fav product"/>
 const Button = ()=> <button> Submit</button>
 let count = 0
 
+// functionsl component should satrs with the first letter capital...and i must return JSX otherwiae it won't return a nything to the string..
 const Header = ()=>{
   return (
     <><div style={{backgroundColor:'blueviolet'}}>
