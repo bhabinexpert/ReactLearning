@@ -16,16 +16,25 @@ function App() {
 
   const onStopClick = ()=>{
     clearInterval(timerRef.current)
-  
     }
   
+  const inputRef = useRef()
+  const onFocusClick = ()=>{
+    inputRef.current.focus()
+  }
  
 
   return (
     <>
+      <div>
+        <input ref = {inputRef} placeholder='Search'/>
+        <button onClick={onFocusClick}> Focus on Input</button>
+      </div>
+    <div>
       <p> Count - {count}</p>
       <button onClick={onStartClick}> Start </button>
       <button onClick={onStopClick}> Stop</button>
+    </div>
     </>
   )
 }
