@@ -9,7 +9,7 @@ function App() {
   const timerRef = useRef('')
   
 
-  // const [counter, setCounter] = useEffect(1)
+  
 
 
   useEffect (()=>{
@@ -17,7 +17,7 @@ function App() {
     fetch(url)
       .then(res => res.json())
       .then(data=> console.log(data))
-  },[count] ) // [count] calls the api every time the page renders, [] calls the api only once
+  },) // [count] calls the api every time the page renders, [] calls the api only once
   
 
   const onStartClick = ()=>{
