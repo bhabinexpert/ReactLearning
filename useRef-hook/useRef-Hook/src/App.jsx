@@ -1,11 +1,23 @@
-import { useRef } from 'react' // returns the value of current object..
+import { useEffect, useRef } from 'react' // returns the value of current object..
 import './App.css'
 import { useState } from 'react'
+// import { useEffect } from 'react'
 
 function App() {
 
   const [count, setCount] = useState(0)
   const timerRef = useRef('')
+  
+
+  // const [counter, setCounter] = useEffect(1)
+
+
+  useEffect (()=>{
+    const url = 'https://dummyjson.com/products'
+    fetch(url)
+      .then(res => res.json())
+      .then(data=> console.log(data))
+  },[count] ) // [count] calls the api every time the page renders, [] calls the api only once
   
 
   const onStartClick = ()=>{
@@ -35,6 +47,8 @@ function App() {
       <button onClick={onStartClick}> Start </button>
       <button onClick={onStopClick}> Stop</button>
     </div>
+
+    
     </>
   )
 }
