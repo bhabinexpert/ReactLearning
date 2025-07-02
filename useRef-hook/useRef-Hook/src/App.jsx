@@ -1,12 +1,29 @@
 import { useEffect, useRef } from 'react' // returns the value of current object..
 import './App.css'
 import { useState } from 'react'
+import { useReducer } from 'react'
 // import { useEffect } from 'react'
 
 function App() {
 
   const [count, setCount] = useState(0)
   const timerRef = useRef('')
+
+const [price, setPrice] = useState('')
+const [discount, setDiscount] = useState('40')
+const [rating, setRating] = useState('')
+
+const initialState ={
+  price:"",
+  discount: '',
+  rating: 4.5
+}
+
+const reducerFun =() =>{
+
+}
+
+const [ state, dispatch] = useReducer(reducerFun, initialState)
   
 
   
@@ -48,6 +65,8 @@ function App() {
       <button onClick={onStopClick}> Stop</button>
     </div>
 
+    {/* useReducer HOOks */}
+    <button onClick={()=> dispatch({type:'INCREMENT'})}> Inc</button>
     
     </>
   )
